@@ -1,20 +1,27 @@
-import React from 'react'
+import React from "react";
 
-const AddEmployee = () => {
-
-
-
+const AddEmployee = ({ employees, setEmployees }) => {
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(e.currentTarget.quitDate.value);
-  }
+    e.preventDefault();
+    console.log(e.currentTarget);
+    setEmployees([
+      ...employees,
+      {
+        name: e.currentTarget.name.value,
+        gender: e.currentTarget.gender.value,
+        group: e.currentTarget.group.value,
+        startDate: e.currentTarget.startDate.value,
+        quitDate: e.currentTarget.quitDate.value,
+      },
+    ]);
+  };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="">Adı:</label>
-          <input type="text" name="name"/>
+          <input type="text" name="name" />
         </div>
         <div>
           <label>Cinsiyeti</label>
@@ -35,7 +42,7 @@ const AddEmployee = () => {
         </div>
         <div>
           <label>İşe Giriş Tarihi:</label>
-          <input type="date" name="startDate"/>
+          <input type="date" name="startDate" />
         </div>
         <div>
           <label>İşten Çıkış Tarihi:</label>
@@ -45,7 +52,7 @@ const AddEmployee = () => {
       </form>
       <button type="button">Grafikleri Göster</button>
     </div>
-  )
-}
+  );
+};
 
-export default AddEmployee
+export default AddEmployee;
