@@ -33,8 +33,8 @@ const AddEmployee = ({
     ]);
   };
 
-  function calculateWorkDays(gender) {
-    const workers = employees.filter((employee) => employee.gender === gender);
+  function calculateWorkDays(property, value) {
+    const workers = employees.filter((employee) => employee[property] === value);
     const workDays = [];
     workers.forEach((maleWorker) => {
       workDays.push(maleWorker.workDays);
@@ -51,9 +51,9 @@ const AddEmployee = ({
 
   const handleClick = () => {
     const [minMaleWorkDays, maxMaleWorkDays, averageMaleWorkDays] =
-      calculateWorkDays("male");
+      calculateWorkDays("gender", "male");
     const [minFemaleWorkDays, maxFemaleWorkDays, averageFemaleWorkDays] =
-      calculateWorkDays("female");
+      calculateWorkDays("gender", "female");
 
     setMaleInfo({
       minMaleWorkDays,
