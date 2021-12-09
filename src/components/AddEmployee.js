@@ -1,6 +1,6 @@
 import React from "react";
 
-const AddEmployee = ({ employees, setEmployees }) => {
+const AddEmployee = ({ employees, setEmployees, showGraphs, setShowGraphs }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -50,7 +50,7 @@ const AddEmployee = ({ employees, setEmployees }) => {
         </div>
         <button type="submit">Ekle</button>
       </form>
-      <button type="button">Grafikleri Göster</button>
+      <button type="button" onClick={() => setShowGraphs(true)}>Grafikleri Göster</button>
     </div>
   );
 };
