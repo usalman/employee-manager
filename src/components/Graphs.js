@@ -6,11 +6,19 @@ const Graphs = ({ maleInfo, femaleInfo }) => {
     series: [
       {
         name: "Erkek",
-        data: [maleInfo.averageMaleWorkDays, maleInfo.minMaleWorkDays, maleInfo.maxMaleWorkDays],
+        data: [
+          maleInfo.averageMaleWorkDays,
+          maleInfo.minMaleWorkDays,
+          maleInfo.maxMaleWorkDays,
+        ],
       },
       {
         name: "Kadın",
-        data: [femaleInfo.averageFemaleWorkDays, femaleInfo.minFemaleWorkDays, femaleInfo.maxFemaleWorkDays],
+        data: [
+          femaleInfo.averageFemaleWorkDays,
+          femaleInfo.minFemaleWorkDays,
+          femaleInfo.maxFemaleWorkDays,
+        ],
       },
     ],
     options: {

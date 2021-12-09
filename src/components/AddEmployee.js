@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const AddEmployee = ({
   employees,
@@ -6,7 +6,7 @@ const AddEmployee = ({
   showGraphs,
   setShowGraphs,
   setMaleInfo,
-  setFemaleInfo
+  setFemaleInfo,
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +19,6 @@ const AddEmployee = ({
     const workDays = Math.floor(
       Math.abs(quitDate - startDate) / (1000 * 3600 * 24)
     );
-    // console.log("workdays: " + workDays);
 
     setEmployees([
       ...employees,
@@ -49,10 +48,6 @@ const AddEmployee = ({
 
     return [minworkDays, maxworkDays, averageworkDays];
   }
-
-  // useEffect(() => {
-  //   console.log(employees);
-  // }, [employees]);
 
   const handleClick = () => {
     const [minMaleWorkDays, maxMaleWorkDays, averageMaleWorkDays] =

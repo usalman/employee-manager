@@ -7,7 +7,7 @@ function App() {
   const [employees, setEmployees] = useState([]);
   const [showGraphs, setShowGraphs] = useState(false);
   const [maleInfo, setMaleInfo] = useState([]);
-  const [femaleInfo, setFemaleInfo] = useState([])
+  const [femaleInfo, setFemaleInfo] = useState([]);
 
   return (
     <div className="App">
@@ -19,7 +19,7 @@ function App() {
         setMaleInfo={setMaleInfo}
         setFemaleInfo={setFemaleInfo}
       />
-      {showGraphs && <Graphs maleInfo={maleInfo} femaleInfo={femaleInfo}/>}
+      {showGraphs && <Graphs maleInfo={maleInfo} femaleInfo={femaleInfo} />}
     </div>
   );
 }
