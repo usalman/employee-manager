@@ -7,6 +7,7 @@ const AddEmployee = ({
   setShowGraphs,
   setMaleInfo,
   setFemaleInfo,
+  setDestekInfo,
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,10 +35,12 @@ const AddEmployee = ({
   };
 
   function calculateWorkDays(property, value) {
-    const workers = employees.filter((employee) => employee[property] === value);
+    const workers = employees.filter(
+      (employee) => employee[property] === value
+    );
     const workDays = [];
-    workers.forEach((maleWorker) => {
-      workDays.push(maleWorker.workDays);
+    workers.forEach((worker) => {
+      workDays.push(worker.workDays);
     });
 
     const minworkDays = Math.min(...workDays);
@@ -55,6 +58,12 @@ const AddEmployee = ({
     const [minFemaleWorkDays, maxFemaleWorkDays, averageFemaleWorkDays] =
       calculateWorkDays("gender", "female");
 
+    const [
+      minDestekGroupWorkDays,
+      maxDestekGroupWorkDays,
+      averageDestekGroupWorkDays,
+    ] = calculateWorkDays("group", "destek");
+
     setMaleInfo({
       minMaleWorkDays,
       maxMaleWorkDays,
@@ -65,6 +74,12 @@ const AddEmployee = ({
       minFemaleWorkDays,
       maxFemaleWorkDays,
       averageFemaleWorkDays,
+    });
+
+    setDestekInfo({
+      minDestekGroupWorkDays,
+      maxDestekGroupWorkDays,
+      averageDestekGroupWorkDays,
     });
 
     setShowGraphs(!showGraphs);

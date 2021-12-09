@@ -1,7 +1,7 @@
 import React from "react";
 import Chart from "react-apexcharts";
 
-const Graphs = ({ maleInfo, femaleInfo }) => {
+const Graphs = ({ maleInfo, femaleInfo, destekInfo }) => {
   const graph1 = {
     series: [
       {
@@ -63,15 +63,15 @@ const Graphs = ({ maleInfo, femaleInfo }) => {
     series: [
       {
         name: "Ortalama işte kalma süresi",
-        data: [44, 55, 57, 34, 35],
+        data: [destekInfo.averageDestekGroupWorkDays, 22, 33, 44, 55],
       },
       {
         name: "En çok işte kalma süresi",
-        data: [176, 285, 101, 34, 35],
+        data: [destekInfo.maxDestekGroupWorkDays, 77, 88, 99, 1010],
       },
       {
         name: "En az işte kalma süresi",
-        data: [176, 285, 101, 34, 35],
+        data: [destekInfo.minDestekGroupWorkDays, 285, 101, 34, 35],
       },
     ],
     options: {

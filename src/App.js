@@ -8,7 +8,9 @@ function App() {
   const [showGraphs, setShowGraphs] = useState(false);
   const [maleInfo, setMaleInfo] = useState([]);
   const [femaleInfo, setFemaleInfo] = useState([]);
+  const [destekInfo, setDestekInfo] = useState([]);
 
+  console.log(destekInfo);
   return (
     <div className="App">
       <AddEmployee
@@ -18,8 +20,15 @@ function App() {
         setShowGraphs={setShowGraphs}
         setMaleInfo={setMaleInfo}
         setFemaleInfo={setFemaleInfo}
+        setDestekInfo={setDestekInfo}
       />
-      {showGraphs && <Graphs maleInfo={maleInfo} femaleInfo={femaleInfo} />}
+      {showGraphs && (
+        <Graphs
+          maleInfo={maleInfo}
+          femaleInfo={femaleInfo}
+          destekInfo={destekInfo}
+        />
+      )}
     </div>
   );
 }
