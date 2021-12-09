@@ -1,9 +1,10 @@
 import './App.css';
+import AddEmployee from './components/AddEmployee';
 
 function App() {
   return (
     <div className="App">
-      hello world
+      <AddEmployee />
     </div>
   );
 }
