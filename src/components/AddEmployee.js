@@ -8,6 +8,10 @@ const AddEmployee = ({
   setMaleInfo,
   setFemaleInfo,
   setDestekInfo,
+  setMuhasebeInfo,
+  setAnalizInfo,
+  setYazilimInfo,
+  setYonetimInfo,
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -64,6 +68,30 @@ const AddEmployee = ({
       averageDestekGroupWorkDays,
     ] = calculateWorkDays("group", "destek");
 
+    const [
+      minMuhasebeGroupWorkDays,
+      maxMuhasebeGroupWorkDays,
+      averageMuhasebeGroupWorkDays,
+    ] = calculateWorkDays("group", "muhasebe");
+
+    const [
+      minAnalizGroupWorkDays,
+      maxAnalizGroupWorkDays,
+      averageAnalizGroupWorkDays,
+    ] = calculateWorkDays("group", "analiz");
+
+    const [
+      minYazilimGroupWorkDays,
+      maxYazilimGroupWorkDays,
+      averageYazilimGroupWorkDays,
+    ] = calculateWorkDays("group", "yazilim");
+
+    const [
+      minYonetimGroupWorkDays,
+      maxYonetimGroupWorkDays,
+      averageYonetimGroupWorkDays,
+    ] = calculateWorkDays("group", "yonetim");
+
     setMaleInfo({
       minMaleWorkDays,
       maxMaleWorkDays,
@@ -80,6 +108,30 @@ const AddEmployee = ({
       minDestekGroupWorkDays,
       maxDestekGroupWorkDays,
       averageDestekGroupWorkDays,
+    });
+
+    setMuhasebeInfo({
+      minMuhasebeGroupWorkDays,
+      maxMuhasebeGroupWorkDays,
+      averageMuhasebeGroupWorkDays,
+    });
+
+    setAnalizInfo({
+      minAnalizGroupWorkDays,
+      maxAnalizGroupWorkDays,
+      averageAnalizGroupWorkDays,
+    });
+
+    setYazilimInfo({
+      minYazilimGroupWorkDays,
+      maxYazilimGroupWorkDays,
+      averageYazilimGroupWorkDays,
+    });
+
+    setYonetimInfo({
+      minYonetimGroupWorkDays,
+      maxYonetimGroupWorkDays,
+      averageYonetimGroupWorkDays,
     });
 
     setShowGraphs(!showGraphs);

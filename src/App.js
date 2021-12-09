@@ -9,6 +9,10 @@ function App() {
   const [maleInfo, setMaleInfo] = useState([]);
   const [femaleInfo, setFemaleInfo] = useState([]);
   const [destekInfo, setDestekInfo] = useState([]);
+  const [muhasebeInfo, setMuhasebeInfo] = useState([]);
+  const [analizInfo, setAnalizInfo] = useState([]);
+  const [yazilimInfo, setYazilimInfo] = useState([]);
+  const [yonetimInfo, setYonetimInfo] = useState([]);
 
   console.log(destekInfo);
   return (
@@ -21,12 +25,20 @@ function App() {
         setMaleInfo={setMaleInfo}
         setFemaleInfo={setFemaleInfo}
         setDestekInfo={setDestekInfo}
+        setMuhasebeInfo={setMuhasebeInfo}
+        setAnalizInfo={setAnalizInfo}
+        setYazilimInfo={setYazilimInfo}
+        setYonetimInfo={setYonetimInfo}
       />
       {showGraphs && (
         <Graphs
           maleInfo={maleInfo}
           femaleInfo={femaleInfo}
           destekInfo={destekInfo}
+          muhasebeInfo={muhasebeInfo}
+          analizInfo={analizInfo}
+          yazilimInfo={yazilimInfo}
+          yonetimInfo={yonetimInfo}
         />
       )}
     </div>
