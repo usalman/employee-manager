@@ -1,23 +1,31 @@
 import React from 'react'
 
 const AddEmployee = () => {
+
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(e.currentTarget.quitDate.value);
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="">Adı:</label>
-          <input type="text" />
+          <input type="text" name="name"/>
         </div>
         <div>
-          <label htmlFor="">Cinsiyeti</label>
-          <select name="" id="">
+          <label>Cinsiyeti</label>
+          <select name="gender">
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
         </div>
         <div>
-          <label htmlFor="">Grubu</label>
-          <select name="" id="">
+          <label>Grubu</label>
+          <select name="group">
             <option value="destek">Destek</option>
             <option value="muhasebe">Muhasebe</option>
             <option value="analiz">Analiz</option>
@@ -26,12 +34,12 @@ const AddEmployee = () => {
           </select>
         </div>
         <div>
-          <label htmlFor="">İşe Giriş Tarihi:</label>
-          <input type="date" />
+          <label>İşe Giriş Tarihi:</label>
+          <input type="date" name="startDate"/>
         </div>
         <div>
-          <label htmlFor="">İşten Çıkış Tarihi:</label>
-          <input type="date" />
+          <label>İşten Çıkış Tarihi:</label>
+          <input type="date" name="quitDate" />
         </div>
         <button type="submit">Ekle</button>
       </form>
