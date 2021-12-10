@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/employee-manager/static/css/main.76e9ea36.chunk.css",
-    "main.js": "/employee-manager/static/js/main.14677867.chunk.js",
-    "main.js.map": "/employee-manager/static/js/main.14677867.chunk.js.map",
+    "main.js": "/employee-manager/static/js/main.2071e369.chunk.js",
+    "main.js.map": "/employee-manager/static/js/main.2071e369.chunk.js.map",
     "runtime-main.js": "/employee-manager/static/js/runtime-main.7a26f56c.js",
     "runtime-main.js.map": "/employee-manager/static/js/runtime-main.7a26f56c.js.map",
-    "static/js/2.d2090857.chunk.js": "/employee-manager/static/js/2.d2090857.chunk.js",
-    "static/js/2.d2090857.chunk.js.map": "/employee-manager/static/js/2.d2090857.chunk.js.map",
+    "static/js/2.3dde185f.chunk.js": "/employee-manager/static/js/2.3dde185f.chunk.js",
+    "static/js/2.3dde185f.chunk.js.map": "/employee-manager/static/js/2.3dde185f.chunk.js.map",
     "index.html": "/employee-manager/index.html",
     "static/css/main.76e9ea36.chunk.css.map": "/employee-manager/static/css/main.76e9ea36.chunk.css.map",
-    "static/js/2.d2090857.chunk.js.LICENSE.txt": "/employee-manager/static/js/2.d2090857.chunk.js.LICENSE.txt"
+    "static/js/2.3dde185f.chunk.js.LICENSE.txt": "/employee-manager/static/js/2.3dde185f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7a26f56c.js",
-    "static/js/2.d2090857.chunk.js",
+    "static/js/2.3dde185f.chunk.js",
     "static/css/main.76e9ea36.chunk.css",
-    "static/js/main.14677867.chunk.js"
+    "static/js/main.2071e369.chunk.js"
   ]
 }
