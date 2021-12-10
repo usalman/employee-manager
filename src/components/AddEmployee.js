@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const AddEmployee = ({
   employees,
@@ -37,6 +37,12 @@ const AddEmployee = ({
       },
     ]);
   };
+
+  useEffect(() => {
+    if (employees.length !== 0) {
+      alert(employees[employees.length-1].name + " eklendi")
+    }
+  }, [employees]);
 
   function calculateWorkDays(property, value) {
     const workers = employees.filter(
@@ -136,7 +142,7 @@ const AddEmployee = ({
 
     setShowGraphs(!showGraphs);
   };
-  
+
   return (
     <div>
       <form onSubmit={handleSubmit} className="submitForm">
@@ -170,15 +176,20 @@ const AddEmployee = ({
             <label>İşten Çıkış Tarihi</label>
             <input type="date" name="quitDate" />
           </div>
-          <button type="submit" className="button submitButton">Ekle</button>
+          <button type="submit" className="button submitButton">
+            Ekle
+          </button>
         </div>
         <div className="formGroupContainer2">
-          <button type="button" onClick={handleClick} className="button clickButton">
+          <button
+            type="button"
+            onClick={handleClick}
+            className="button clickButton"
+          >
             Grafikleri Göster
           </button>
         </div>
       </form>
-      
     </div>
   );
 };
