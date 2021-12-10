@@ -135,21 +135,27 @@ const Graphs = ({
   };
 
   return (
-    <div>
-      <Chart
-        options={graph1.options}
-        series={graph1.series}
-        type="bar"
-        width={500}
-        height={320}
-      />
-      <Chart
-        options={graph2.options}
-        series={graph2.series}
-        type="bar"
-        width={800}
-        height={320}
-      />
+    <div className="chartGroup">
+      <div className="chartOne">
+        <h1>Cinsiyete Göre İşte Kalma Süreleri</h1>
+        <Chart
+          options={graph1.options}
+          series={graph1.series}
+          type="bar"
+          width={500}
+          height={320}
+        />
+      </div>
+      <div className="chartTwo">
+      <h1>Gruba Göre İşte Kalma Süreleri</h1>
+        <Chart
+          options={graph2.options}
+          series={graph2.series}
+          type="bar"
+          width={800}
+          height={320}
+        />
+      </div>
     </div>
   );
 };
