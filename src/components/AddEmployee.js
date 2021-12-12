@@ -176,11 +176,10 @@ const AddEmployee = ({
             <label>İşten Çıkış Tarihi</label>
             <input type="date" name="quitDate" />
           </div>
+          <div className="formButtonGroup">
           <button type="submit" className="button submitButton">
             Ekle
           </button>
-        </div>
-        <div className="formGroupContainer2">
           <button
             type="button"
             onClick={handleClick}
@@ -188,6 +187,7 @@ const AddEmployee = ({
           >
             Grafikleri Göster
           </button>
+          </div>
         </div>
       </form>
     </div>

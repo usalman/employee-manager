@@ -3,8 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-size: 1.2em;
+  font-family: 'Readex Pro', sans-serif;
 }
 
 .submitForm {
@@ -27,6 +29,18 @@ body {
   align-items: center;
 }
 
+.formButtonGroup {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chartOne{
+  margin: 0 auto;
+}
+
 input, select {
   padding: 5px;
   margin-left: 50px;
@@ -34,20 +48,23 @@ input, select {
   text-align: center;
 }
 
-.submitButton {
+.button {
+  border-radius: 18px;
+  border-style: none;
+  color: #eee;
+  padding: 10px 25px;
   margin-top: 15px;
-  background-color: #0069d9;
-  padding: 10px 0;
-  font-size: 1.1em;
-  width: 50%;
-  align-self: center;
+  width: 100%;
+  font-weight: bold;
+  font-size: .8em;
+}
+
+.submitButton {
+  background-color: #65cbe9;
 }
 
 .clickButton {
-  padding: 15px 25px;
-  font-weight: 700;
-  background-color: green;
-  
+  background-color: #6c8dfa;
 }
 
 .chartGroup {

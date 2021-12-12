@@ -152,7 +152,7 @@ const Graphs = ({
           options={graph2.options}
           series={graph2.series}
           type="bar"
-          width={800}
+          width={500}
           height={320}
         />
       </div>
