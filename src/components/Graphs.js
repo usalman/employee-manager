@@ -142,17 +142,18 @@ const Graphs = ({
           options={graph1.options}
           series={graph1.series}
           type="bar"
-          width={500}
+          width={768}
           height={320}
-        />
+        />        
       </div>
       <div className="chartTwo">
+      
       <h1>Gruba Göre İşte Kalma Süreleri</h1>
         <Chart
           options={graph2.options}
           series={graph2.series}
           type="bar"
-          width={800}
+          width={768}
           height={320}
         />
       </div>

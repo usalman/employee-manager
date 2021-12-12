@@ -153,14 +153,14 @@ const AddEmployee = ({
           </div>
           <div className="formGroup">
             <label>Cinsiyet</label>
-            <select name="gender">
+            <select name="gender" className="genderSelect">
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
           </div>
           <div className="formGroup">
             <label>Grup</label>
-            <select name="group">
+            <select name="group" className="groupSelect">
               <option value="destek">Destek</option>
               <option value="muhasebe">Muhasebe</option>
               <option value="analiz">Analiz</option>
@@ -176,11 +176,10 @@ const AddEmployee = ({
             <label>İşten Çıkış Tarihi</label>
             <input type="date" name="quitDate" />
           </div>
+          <div className="formButtonGroup">
           <button type="submit" className="button submitButton">
             Ekle
           </button>
-        </div>
-        <div className="formGroupContainer2">
           <button
             type="button"
             onClick={handleClick}
@@ -188,6 +187,7 @@ const AddEmployee = ({
           >
             Grafikleri Göster
           </button>
+          </div>
         </div>
       </form>
     </div>
