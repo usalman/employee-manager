@@ -15,7 +15,10 @@ function App() {
         graphView={graphView}
         setGraphView={setGraphView}
       />
-      {graphView && <Graphs employees={employees} />}
+      {graphView && (
+        <Graphs employees={employees}/>
+      )}
+      
     </div>
   );
 }
