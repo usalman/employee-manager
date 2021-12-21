@@ -1,9 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-const AddEmployee = ({
-  employees,
-  setEmployees,
-}) => {
+const AddEmployee = ({ employees, setEmployees, graphView, setGraphView }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -12,9 +9,7 @@ const AddEmployee = ({
       e.currentTarget.quitDate.value === ""
         ? new Date()
         : new Date(e.currentTarget.quitDate.value);
-    const workDays = Math.floor(
-      Math.abs(quitDate - startDate) / (1000 * 3600 * 24)
-    );
+    const workDays = Math.floor((quitDate - startDate) / (1000 * 3600 * 24));
 
     setEmployees([
       ...employees,
@@ -30,7 +25,9 @@ const AddEmployee = ({
     alert(e.currentTarget.name.value + " eklendi");
   };
 
-
+  const toggleGraphView = () => {
+    setGraphView(!graphView);
+  };
 
   return (
     <div>
@@ -72,6 +69,7 @@ const AddEmployee = ({
             <button
               type="button"
               className="button clickButton"
+              onClick={toggleGraphView}
             >
               Grafikleri Göster
             </button>
