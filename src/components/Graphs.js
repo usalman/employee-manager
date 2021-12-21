@@ -1,32 +1,35 @@
 import React from "react";
 import Chart from "react-apexcharts";
 
-const Graphs = ({
-  maleInfo,
-  femaleInfo,
-  destekInfo,
-  muhasebeInfo,
-  analizInfo,
-  yazilimInfo,
-  yonetimInfo,
-}) => {
+const computeRenderData = (gender,filter,employees) => {
+  return [
+    employees
+      .filter((employee) => employee[filter] === gender)
+      .reduce((prev, current, index) => {
+        return (prev * index + current.workDays) / (index + 1);
+      }, 0),
+    Math.min(
+      ...employees
+        .filter((employee) => employee[filter] === gender)
+        .map((employee) => employee.workDays)
+    ),
+    Math.max(
+      ...employees
+        .filter((employee) => employee[filter] === gender)
+        .map((employee) => employee.workDays)
+    ),
+  ]
+}
+const Graphs = ({ employees }) => {
   const graph1 = {
     series: [
       {
         name: "Erkek",
-        data: [
-          maleInfo.averageMaleWorkDays,
-          maleInfo.minMaleWorkDays,
-          maleInfo.maxMaleWorkDays,
-        ],
+        data: computeRenderData('male','gender',employees),
       },
       {
         name: "Kadın",
-        data: [
-          femaleInfo.averageFemaleWorkDays,
-          femaleInfo.minFemaleWorkDays,
-          femaleInfo.maxFemaleWorkDays,
-        ],
+        data: computeRenderData('female','gender',employees),
       },
     ],
     options: {
@@ -67,73 +70,6 @@ const Graphs = ({
     },
   };
 
-  const graph2 = {
-    series: [
-      {
-        name: "Ortalama işte kalma süresi",
-        data: [
-          destekInfo.averageDestekGroupWorkDays,
-          muhasebeInfo.averageMuhasebeGroupWorkDays,
-          analizInfo.averageAnalizGroupWorkDays,
-          yazilimInfo.averageYazilimGroupWorkDays,
-          yonetimInfo.averageYonetimGroupWorkDays,
-        ],
-      },
-      {
-        name: "En çok işte kalma süresi",
-        data: [
-          destekInfo.maxDestekGroupWorkDays,
-          muhasebeInfo.maxMuhasebeGroupWorkDays,
-          analizInfo.maxAnalizGroupWorkDays,
-          yazilimInfo.maxYazilimGroupWorkDays,
-          yonetimInfo.maxYonetimGroupWorkDays,
-        ],
-      },
-      {
-        name: "En az işte kalma süresi",
-        data: [
-          destekInfo.minDestekGroupWorkDays,
-          muhasebeInfo.minMuhasebeGroupWorkDays,
-          analizInfo.minAnalizGroupWorkDays,
-          yazilimInfo.minYazilimGroupWorkDays,
-          yonetimInfo.minYonetimGroupWorkDays,
-        ],
-      },
-    ],
-    options: {
-      chart: {
-        type: "bar",
-        height: 350,
-      },
-      plotOptions: {
-        bar: {
-          horizontal: false,
-          columnWidth: "65%",
-          endingShape: "rounded",
-        },
-      },
-      dataLabels: {
-        enabled: true,
-      },
-      stroke: {
-        show: true,
-        width: 2,
-        colors: ["transparent"],
-      },
-      xaxis: {
-        categories: ["Destek", "Muhasebe", "Analiz", "Yazılım", "Yönetim"],
-      },
-      yaxis: {
-        title: {
-          text: "Gün sayısı",
-        },
-      },
-      fill: {
-        opacity: 1,
-      },
-    },
-  };
-
   return (
     <div className="chartGroup">
       <div className="chartOne">
@@ -141,17 +77,6 @@ const Graphs = ({
         <Chart
           options={graph1.options}
           series={graph1.series}
-          type="bar"
-          width={768}
-          height={320}
-        />        
-      </div>
-      <div className="chartTwo">
-      
-      <h1>Gruba Göre İşte Kalma Süreleri</h1>
-        <Chart
-          options={graph2.options}
-          series={graph2.series}
           type="bar"
           width={768}
           height={320}

@@ -3,15 +3,6 @@ import React, { useEffect } from "react";
 const AddEmployee = ({
   employees,
   setEmployees,
-  showGraphs,
-  setShowGraphs,
-  setMaleInfo,
-  setFemaleInfo,
-  setDestekInfo,
-  setMuhasebeInfo,
-  setAnalizInfo,
-  setYazilimInfo,
-  setYonetimInfo,
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,112 +27,10 @@ const AddEmployee = ({
         workDays: workDays,
       },
     ]);
+    alert(e.currentTarget.name.value + " eklendi");
   };
 
-  useEffect(() => {
-    if (employees.length !== 0) {
-      alert(employees[employees.length-1].name + " eklendi")
-    }
-  }, [employees]);
 
-  function calculateWorkDays(property, value) {
-    const workers = employees.filter(
-      (employee) => employee[property] === value
-    );
-    const workDays = [];
-    workers.forEach((worker) => {
-      workDays.push(worker.workDays);
-    });
-
-    const minworkDays = Math.min(...workDays);
-    const maxworkDays = Math.max(...workDays);
-    let total = 0;
-    workDays.forEach((workDay) => (total += workDay));
-    const averageworkDays = Math.round((total / workDays.length) * 10) / 10;
-
-    return [minworkDays, maxworkDays, averageworkDays];
-  }
-
-  const handleClick = () => {
-    const [minMaleWorkDays, maxMaleWorkDays, averageMaleWorkDays] =
-      calculateWorkDays("gender", "male");
-    const [minFemaleWorkDays, maxFemaleWorkDays, averageFemaleWorkDays] =
-      calculateWorkDays("gender", "female");
-
-    const [
-      minDestekGroupWorkDays,
-      maxDestekGroupWorkDays,
-      averageDestekGroupWorkDays,
-    ] = calculateWorkDays("group", "destek");
-
-    const [
-      minMuhasebeGroupWorkDays,
-      maxMuhasebeGroupWorkDays,
-      averageMuhasebeGroupWorkDays,
-    ] = calculateWorkDays("group", "muhasebe");
-
-    const [
-      minAnalizGroupWorkDays,
-      maxAnalizGroupWorkDays,
-      averageAnalizGroupWorkDays,
-    ] = calculateWorkDays("group", "analiz");
-
-    const [
-      minYazilimGroupWorkDays,
-      maxYazilimGroupWorkDays,
-      averageYazilimGroupWorkDays,
-    ] = calculateWorkDays("group", "yazilim");
-
-    const [
-      minYonetimGroupWorkDays,
-      maxYonetimGroupWorkDays,
-      averageYonetimGroupWorkDays,
-    ] = calculateWorkDays("group", "yonetim");
-
-    setMaleInfo({
-      minMaleWorkDays,
-      maxMaleWorkDays,
-      averageMaleWorkDays,
-    });
-
-    setFemaleInfo({
-      minFemaleWorkDays,
-      maxFemaleWorkDays,
-      averageFemaleWorkDays,
-    });
-
-    setDestekInfo({
-      minDestekGroupWorkDays,
-      maxDestekGroupWorkDays,
-      averageDestekGroupWorkDays,
-    });
-
-    setMuhasebeInfo({
-      minMuhasebeGroupWorkDays,
-      maxMuhasebeGroupWorkDays,
-      averageMuhasebeGroupWorkDays,
-    });
-
-    setAnalizInfo({
-      minAnalizGroupWorkDays,
-      maxAnalizGroupWorkDays,
-      averageAnalizGroupWorkDays,
-    });
-
-    setYazilimInfo({
-      minYazilimGroupWorkDays,
-      maxYazilimGroupWorkDays,
-      averageYazilimGroupWorkDays,
-    });
-
-    setYonetimInfo({
-      minYonetimGroupWorkDays,
-      maxYonetimGroupWorkDays,
-      averageYonetimGroupWorkDays,
-    });
-
-    setShowGraphs(!showGraphs);
-  };
 
   return (
     <div>
@@ -177,16 +66,15 @@ const AddEmployee = ({
             <input type="date" name="quitDate" />
           </div>
           <div className="formButtonGroup">
-          <button type="submit" className="button submitButton">
-            Ekle
-          </button>
-          <button
-            type="button"
-            onClick={handleClick}
-            className="button clickButton"
-          >
-            Grafikleri Göster
-          </button>
+            <button type="submit" className="button submitButton">
+              Ekle
+            </button>
+            <button
+              type="button"
+              className="button clickButton"
+            >
+              Grafikleri Göster
+            </button>
           </div>
         </div>
       </form>
