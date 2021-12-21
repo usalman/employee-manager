@@ -5,19 +5,17 @@ import Graphs from "./components/Graphs";
 
 function App() {
   const [employees, setEmployees] = useState([]);
+  const [graphView, setGraphView] = useState(false);
 
   return (
     <div className="App">
       <AddEmployee
         employees={employees}
         setEmployees={setEmployees}
-      
+        graphView={graphView}
+        setGraphView={setGraphView}
       />
-      
-        <Graphs
-         employees={employees}
-        />
-      
+      {graphView && <Graphs employees={employees} />}
     </div>
   );
 }
